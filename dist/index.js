@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((module) => {
 
-eval("module.exports = JSON.parse('{\"name\":\"postcss-class-apply\",\"version\":\"0.0.1\",\"description\":\"PostCSS plugin enabling custom class sets references\",\"keywords\":[\"css\",\"class apply\",\"apply\",\"@apply\",\"postcss\",\"postcss class @appy plugin\",\"postcss-plugin\"],\"author\":{\"name\":\"Rasel mahmud\",\"url\":\"https://github.com/rasel-code-dev\"},\"homepage\":\"https://github.com/rasel-code-dev/postcss-class-apply\",\"bugs\":\"https://github.com/rasel-code-dev/postcss-class-apply/issues\",\"repository\":{\"type\":\"git\",\"url\":\"git://github.com/rasel-code-dev/postcss-class-apply.git\"},\"license\":\"Unlicense\",\"files\":[\"dist\",\"CHANGELOG.md\",\"index.js\",\"README.md\",\"UNLICENSE\"],\"scripts\":{\"build\":\"export NODE_ENV=production&&webpack\",\"lint\":\"eslint src/\",\"dev\":\"webpack --watch\",\"start\":\"nodemon dist/index.js\"},\"peerDependencies\":{\"postcss\":\"^8.4.1\"},\"devDependencies\":{\"jest\":\"^27.3.1\",\"nodemon\":\"^2.0.15\",\"webpack\":\"^5.64.4\",\"webpack-cli\":\"^4.9.1\",\"prettier\":\"^2.5.0\",\"eslint\":\"^8.3.0\",\"eslint-config-airbnb-base\":\"^15.0.0\",\"eslint-config-prettier\":\"^8.3.0\",\"eslint-plugin-import\":\"^2.25.3\",\"eslint-plugin-prettier\":\"^4.0.0\"}}');\n\n//# sourceURL=webpack://postcss-class-apply/./package.json?");
+eval("module.exports = JSON.parse('{\"name\":\"postcss-class-apply\",\"version\":\"3.0.0\",\"description\":\"PostCSS plugin enabling custom class sets references\",\"keywords\":[\"css\",\"class apply\",\"apply\",\"@apply\",\"postcss\",\"postcss class @appy plugin\",\"postcss-plugin\"],\"author\":{\"name\":\"Rasel mahmud\",\"url\":\"https://github.com/rasel-code-dev\"},\"homepage\":\"https://github.com/rasel-code-dev/postcss-class-apply\",\"bugs\":\"https://github.com/rasel-code-dev/postcss-class-apply/issues\",\"repository\":{\"type\":\"git\",\"url\":\"git://github.com/rasel-code-dev/postcss-class-apply.git\"},\"license\":\"Unlicense\",\"files\":[\"dist\",\"CHANGELOG.md\",\"index.js\",\"README.md\",\"UNLICENSE\"],\"scripts\":{\"build\":\"export NODE_ENV=production&&webpack\",\"lint\":\"eslint src/\",\"dev\":\"webpack --watch\",\"start\":\"nodemon dist/index.js\"},\"peerDependencies\":{\"postcss\":\"^8.4.1\"},\"devDependencies\":{\"jest\":\"^27.3.1\",\"nodemon\":\"^2.0.15\",\"webpack\":\"^5.64.4\",\"webpack-cli\":\"^4.9.1\",\"prettier\":\"^2.5.0\",\"eslint\":\"^8.3.0\",\"eslint-config-airbnb-base\":\"^15.0.0\",\"eslint-config-prettier\":\"^8.3.0\",\"eslint-plugin-import\":\"^2.25.3\",\"eslint-plugin-prettier\":\"^4.0.0\"}}');\n\n//# sourceURL=webpack://postcss-class-apply/./package.json?");
 
 /***/ })
 
@@ -91,6 +91,7 @@ eval("module.exports = JSON.parse('{\"name\":\"postcss-class-apply\",\"version\"
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
+/******/ 	module.exports = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;

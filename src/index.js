@@ -63,4 +63,4 @@ const plugin = (opts = {}) => {
 //   }
 // `);
 
-module.exports = plugin;
+export default plugin;
