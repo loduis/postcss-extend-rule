@@ -2,4 +2,3 @@ node_modules
 coverage
 .jest-cache
 .idea
-./src/index.js

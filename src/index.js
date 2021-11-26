@@ -1,12 +1,10 @@
-// import postcss from "postcss";
-import { name } from "../package.json";
+const { name } = require("../package.json");
 
-const plugin = (opts = {}) => {
+
+module.exports = (opts = {}) => {
   return {
     postcssPlugin: name,
-    
     Once(root) {
-      // Plugin code
       let appliedClasses = new Set();
       let applies = new Set();
       
@@ -46,21 +44,10 @@ const plugin = (opts = {}) => {
           }
         }
       });
+      
     }
   };
 };
 
 
-// function run(css) {
-//   let output = postcss([plugin()]).process(css);
-//   console.log(output.toString());
-// }
-
-// run(`
-//   .app{background: red}
-//   .title{
-//     @apply app
-//   }
-// `);
-
-export default plugin;
+module.exports.postcss = true;

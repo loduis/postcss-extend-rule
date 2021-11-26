@@ -1,10 +1,10 @@
 const path = require("path");
 module.exports = {
   mode: process.env.NODE_ENV === "production" ? "development" : "production",
-  entry: "./src/index.js",
+  entry: "./src/index.tests.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.js",
-    libraryTarget: "commonjs2"
+    filename: "index.tests.js"
+    // libraryTarget: "commonjs2"
   }
 };
