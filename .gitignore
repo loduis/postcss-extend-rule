@@ -3,3 +3,4 @@ coverage
 .jest-cache
 .idea
 lib
+dist
