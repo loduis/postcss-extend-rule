@@ -1,6 +1,6 @@
 {
   "name": "postcss-class-apply",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "PostCSS plugin enabling custom class sets references",
   "keywords": [
     "css",
@@ -30,9 +30,7 @@
     "UNLICENSE"
   ],
   "scripts": {
-    "build": "export NODE_ENV=production&&webpack",
     "lint": "eslint src/",
-    "dev": "webpack --watch",
     "start": "nodemon dist/index.js"
   },
   "peerDependencies": {
