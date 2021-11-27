@@ -1,7 +1,7 @@
 {
   "name": "postcss-class-apply",
-  "version": "3.5.0",
-  "description": "PostCSS plugin enabling custom class sets references",
+  "version": "4.0.0",
+  "description": "PostCSS plugin enabling custom class sets like tailwind css",
   "keywords": [
     "css",
     "class apply",

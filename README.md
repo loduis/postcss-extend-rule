@@ -62,15 +62,55 @@ postcss()
 .list_item {
   @apply reset;
 }
+
+
+.btn-reset {
+  outline: none;
+  border: 1px solid;
+}
+
+.btn-primary {
+  border-color: #204486;
+  background: #3d82ff;
+}
+
+.button {
+  margin: 3px 8px;
+  @apply btn-primary;
+}
 ```
 
 ```css
 /* output */
+.reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 .list_item {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+
+.btn-reset {
+  outline: none;
+  border: 1px solid;
+}
+
+.btn-primary {
+  border-color: #204486;
+  background: #3d82ff;
+}
+
+.button {
+  margin: 3px 8px;
+  border-color: #204486;
+  background: #3d82ff;
+  outline: none;
+  border: 1px solid;
 }
 ```
 
