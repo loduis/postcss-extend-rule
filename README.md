@@ -34,8 +34,16 @@ npm install postcss-class-apply --save-dev
 ```js
 const fs = require('fs');
 const postcss = require('postcss');
-const apply = require('postcss-class-apply');
+const apply = require("postcss-class-apply/dist/index")
 
+module.exports = {
+  plugins: [
+    apply()
+  ]
+}
+
+
+// or
 const input = fs.readFileSync('input.css', 'utf8');
 
 postcss()
