@@ -21,13 +21,13 @@ function plugin(opts = {}) {
   return {
     postcssPlugin: name,
     Once(root) {
-      root.walkAtRules("apply", (rule) => {
+      root.walkAtRules("extend", (rule) => {
         // find all @applies classes...
         let classes = rule.params.toString().replace(/\s/g, " ").split(" ");
         classes.forEach(selector => {
           
           // get all array of Declarations for @apply selector
-          const decls = getDeclarationsForSelector(`.${selector}`, rule.root());
+          const decls = getDeclarationsForSelector(`${selector}`, rule.root());
           decls.forEach(decl => {
             rule.parent.append({
               prop: decl.prop,
