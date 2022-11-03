@@ -1,5 +1,5 @@
 {
-  "name": "postcss-class-apply",
+  "name": "postcss-extend-rule",
   "version": "4.0.1",
   "description": "PostCSS plugin enabling custom class sets like tailwind css",
   "keywords": [
