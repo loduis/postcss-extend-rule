@@ -26,11 +26,13 @@ function plugin(opts = {}) {
         const root = rule.root();
         const parent = rule.parent;
         for (const selector of selectors) {
-          parent.append(...getExtendingRules(selector, root));
+          const rules = getExtendingRules(selector, root)
+          if (rules.length) {
+            parent.append(...rules);
+          }
         }
         rule.remove();
       });
-
       root.walkRules(functionalSelectorMatch, functionalRule => {
         functionalRule.remove();
       });
