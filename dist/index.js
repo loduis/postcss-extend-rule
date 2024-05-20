@@ -1,48 +1,45 @@
-const { name } = require("../package.json");
+const { name } = require('../package.json');
 
-function getDeclarationsForSelector(selector, css) {
-  const decls = []
-  css.walkRules(rule => {
-    let ruleHasSelector = rule.selectors.some(ruleSelector => {
-      return ruleSelector === selector
-    })
-    
+// functional selector match
+const functionalSelectorMatch = /(^|[^\w-])(%[_a-zA-Z]+[_a-zA-Z0-9-]*)([^\w-]|$)/i;
+
+function getExtendingRules(selector, root, postcss) {
+  const rules = [];
+  root.walkRules(rule => {
+    const ruleHasSelector = rule.selectors.some(ruleSelector => {
+      return ruleSelector === selector;
+    });
     if (ruleHasSelector) {
-      rule.walkDecls(decl => {
-        decls.push(decl)
-      })
+      rules.push(...rule.clone().nodes);
     }
-  })
-  
-  return decls
+  });
+
+  return rules;
 }
 
 function plugin(opts = {}) {
   return {
     postcssPlugin: name,
-    Once(root) {
-      root.walkAtRules("apply", (rule)=>{
-        // find all @applies classes...
-        let classes = rule.params.toString().replace(/\s/g, ' ').split(' ')
-        classes.forEach(selector=>{
-          
-          // get all array of Declarations for @apply selector
-          const decls = getDeclarationsForSelector(`.${selector}`, rule.root())
-          decls.forEach(decl => {
-            rule.parent.append({
-              prop: decl.prop,
-              value: decl.value
-            })
-          })
-        })
-        
-        // remove all @apply rule
-        rule.remove()
-      })
+    Once(root, { postcss }) {
+      root.walkAtRules('extend', (rule) => {
+        const selectors = rule.params.toString().replace(/\s/g, ' ').split(' ');
+        const root = rule.root();
+        const parent = rule.parent;
+        for (const selector of selectors) {
+          const rules = getExtendingRules(selector, root)
+          if (rules.length) {
+            parent.append(...rules);
+          }
+        }
+        rule.remove();
+      });
+      root.walkRules(functionalSelectorMatch, functionalRule => {
+        functionalRule.remove();
+      });
     }
-  }
+  };
 }
 
-module.exports = plugin
+module.exports = plugin;
 
-module.exports.postcss = true;
+module.exports.postcss = true
